@@ -44,7 +44,7 @@ class _NotesPageState extends State<NotesPage> {
             'Notes',
             style: TextStyle(fontSize: 24),
           ),
-          actions: [Icon(Icons.search), SizedBox(width: 12)],
+          // actions: [Icon(Icons.search), SizedBox(width: 12)],
         ),
         body: Center(
           child: isLoading
@@ -73,9 +73,9 @@ class _NotesPageState extends State<NotesPage> {
         padding: EdgeInsets.all(8),
         itemCount: notes.length,
         staggeredTileBuilder: (index) => StaggeredTile.fit(2),
-        crossAxisCount: 4,
-        mainAxisSpacing: 4,
-        crossAxisSpacing: 4,
+        crossAxisCount: 2,
+        mainAxisSpacing: 2,
+        crossAxisSpacing: 2,
         itemBuilder: (context, index) {
           final note = notes[index];
 

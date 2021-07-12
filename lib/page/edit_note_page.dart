@@ -33,25 +33,29 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          actions: [buildButton()],
-        ),
-        body: Form(
-          key: _formKey,
-          child: NoteFormWidget(
-            isImportant: isImportant,
-            number: number,
-            title: title,
-            description: description,
-            onChangedImportant: (isImportant) =>
-                setState(() => this.isImportant = isImportant),
-            onChangedNumber: (number) => setState(() => this.number = number),
-            onChangedTitle: (title) => setState(() => this.title = title),
-            onChangedDescription: (description) =>
-                setState(() => this.description = description),
+      appBar: AppBar(
+          //actions: [buildButton()],
           ),
-        ),
-      );
+      body: Column(
+        children: [
+          Form(
+            key: _formKey,
+            child: NoteFormWidget(
+              isImportant: isImportant,
+              number: number,
+              title: title,
+              description: description,
+              onChangedImportant: (isImportant) =>
+                  setState(() => this.isImportant = isImportant),
+              onChangedNumber: (number) => setState(() => this.number = number),
+              onChangedTitle: (title) => setState(() => this.title = title),
+              onChangedDescription: (description) =>
+                  setState(() => this.description = description),
+            ),
+          ),
+          buildButton(),
+        ],
+      ));
 
   Widget buildButton() {
     final isFormValid = title.isNotEmpty && description.isNotEmpty;
@@ -60,7 +64,7 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
       padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          onPrimary: Colors.black,
+          onPrimary: Colors.white,
           primary: isFormValid ? null : Colors.blueGrey,
         ),
         onPressed: addOrUpdateNote,

@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../model/note.dart';
 
-final _lightColors = [
-  Colors.amber.shade300,
-  Colors.lightGreen.shade300,
-  Colors.lightBlue.shade300,
-  Colors.orange.shade300,
-  Colors.pinkAccent.shade100,
-  Colors.tealAccent.shade100
-];
+final _lightColors = [Colors.orange, Colors.lightGreen];
 
 class NoteCardWidget extends StatelessWidget {
   NoteCardWidget({
@@ -39,13 +32,13 @@ class NoteCardWidget extends StatelessWidget {
           children: [
             Text(
               time,
-              style: TextStyle(color: Colors.blueGrey),
+              style: TextStyle(color: Colors.white),
             ),
             SizedBox(height: 4),
             Text(
               note.title,
               style: TextStyle(
-                color: Colors.black,
+                color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
